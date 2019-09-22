@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "mailto:me",
+  "version": "0.1.0",
+  "description": "Mail websites to yourself for archiving or reading them later",
+  "icons": {
+
+  },
+  "page_action": {
+    "browser_style": true,
+    "default_icon": {
+      "19": "icons/19.png",
+      "38": "icons/38.png"
+    },
+    "default_title": "mailto:me",
+    "show_matches": ["<all_urls>"]
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "storage"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": true
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "mailto:me",
+      "strict_min_version": "50.0"
+    }
+  }
+}

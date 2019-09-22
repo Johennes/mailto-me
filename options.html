@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="options.css">
+    </head>
+    <body>
+        <form>
+            <h3>General</h3>
+            <label for="recipient">Email recipient</label>
+            <input id="recipient" type="text" name="recipient">
+            <h3>Mail Format</h3>
+            <input id="format-plain-text" type="radio" name="format" value="plain-text">
+            <label for="format-plain-text">Plain text</label>
+            <br/>
+            <input id="format-html" type="radio" name="format" value="html">
+            <label for="format-html">HTML</label>
+            <div id="html-variant-container">
+                <p id="html-disclaimer">
+                    The mailto URI scheme as standardized by <a href="https://tools.ietf.org/html/rfc6068">RFC 6068</a>
+                    does not support HTML content. You can try to work around this with one of the following options.
+                </p>
+                <input id="html-variant-body" type="radio" name="html-variant" value="body">
+                <label for="html-variant-body">Use html-body parameter (supported in e.g. Thunderbird)</label>
+                <br/>
+                <input id="html-variant-copy" type="radio" name="html-variant" value="copy">
+                <label for="html-variant-copy">Copy HTML to clipboard</label>
+            </div>
+            <h3>Mail Content</h3>
+            <input id="include-link" type="checkbox" name="include-link">
+            <label for="include-link">Include link</label>
+            <br/>
+            <input id="include-article" type="checkbox" name="include-article">
+            <label for="include-article">Include article (if possible)</label>
+            <p>
+                Article extraction is powered by <a href="https://github.com/mozilla/readability">Readability</a>
+                and <a href="https://github.com/domchristie/turndown">Turndown</a>.
+            </p>
+        </form>
+        <script src="options.js"></script>
+    </body>
+</html>
