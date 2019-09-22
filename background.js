@@ -6,11 +6,11 @@
         console.log(settings)
     
         if (settings.includeArticle) {
-            await loadDependencyIfNeeded("Readability.js", "Readability")
+            await loadDependencyIfNeeded("readability/Readability.js", "Readability")
         }
     
         if (settings.format == "plain-text") {
-            await loadDependencyIfNeeded("turndown.js", "TurndownService")
+            await loadDependencyIfNeeded("turndown/dist/turndown.js", "TurndownService")
         }
     
         postOnceIfRequested(settings)

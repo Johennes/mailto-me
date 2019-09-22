@@ -29,7 +29,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "mailto:me",
+      "id": "mailto@me",
       "strict_min_version": "50.0"
     }
   }
