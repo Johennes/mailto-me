@@ -4,13 +4,14 @@
   "version": "0.1.0",
   "description": "Mail websites to yourself for archiving or reading them later",
   "icons": {
-
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
   },
   "page_action": {
     "browser_style": true,
     "default_icon": {
-      "19": "icons/19.png",
-      "38": "icons/38.png"
+      "19": "icons/action-19.png",
+      "38": "icons/action-38.png"
     },
     "default_title": "mailto:me",
     "show_matches": ["<all_urls>"]
