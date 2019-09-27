@@ -20,6 +20,7 @@ node_modules/web-ext/bin/web-ext $command $flags \
     --ignore-files "*LICENSE*" \
     --ignore-files "README.md" \
     --ignore-files "package-lock.json" \
+    --ignore-files "screenshots/*" \
     --ignore-files "web-ext" \
     --ignore-files "icons/original.png" \
     --ignore-files "readability/!(Readability.js)" \
