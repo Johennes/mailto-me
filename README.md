@@ -1,7 +1,5 @@
 # mailto:me
 
-*Mirrors: [GitHub] ~ [GitLab]*
-
 A Firefox extension for emailing websites to yourself
 
 mailto:me generates mailto hyperlinks and lets Firefox open them in your email client of choice. In addition to
@@ -33,8 +31,6 @@ Article extraction and formatting is powered by [Readability] and [Turndown].
 The extension's icons are derived from [Mail free icon] made by [Iconnice] from [www.flaticon.com],
 licensed under [CC BY 3.0]. Changes made to the original include addition of background color and text.
 
-[GitHub]: https://github.com/Johennes/mailto-me
-[GitLab]: https://gitlab.com/cherrypicker/mailto-me
 [Readability]: https://github.com/mozilla/readability
 [Turndown]: https://github.com/domchristie/turndown
 [Mail free icon]: https://www.flaticon.com/free-icon/mail_131155
