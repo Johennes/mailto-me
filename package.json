@@ -1,0 +1,12 @@
+{
+  "name": "mailto-me",
+  "description": "Mail websites to yourself for archiving or reading them later",
+  "repository": {},
+  "author": "Johannes Marbach",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@mozilla/readability": "^0.3.0",
+    "turndown": "^7.0.0",
+    "web-ext": "^5.3.0"
+  }
+}

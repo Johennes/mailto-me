@@ -1,11 +1,9 @@
 #!/bin/bash
 
-pushd turndown
 npm i
-npm run build
-popd
 
-npm i web-ext
+cp node_modules/turndown/dist/turndown.js .
+cp node_modules/@mozilla/readability/Readability.js .
 
 command=$1
 
@@ -22,6 +20,4 @@ node_modules/web-ext/bin/web-ext $command $flags \
     --ignore-files "package-lock.json" \
     --ignore-files "screenshots/*" \
     --ignore-files "web-ext" \
-    --ignore-files "icons/original.png" \
-    --ignore-files "readability/!(Readability.js)" \
-    --ignore-files "turndown/!(dist)"
+    --ignore-files "icons/original.png"
