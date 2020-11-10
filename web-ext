@@ -2,8 +2,9 @@
 
 npm i
 
-cp node_modules/turndown/dist/turndown.js .
-cp node_modules/@mozilla/readability/Readability.js .
+cp -v node_modules/turndown/dist/turndown.js .
+cp -v node_modules/@mozilla/readability/Readability.js .
+cp -v node_modules/webextension-polyfill/dist/browser-polyfill.js .
 
 command=$1
 

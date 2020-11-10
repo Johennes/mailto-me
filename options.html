@@ -20,11 +20,11 @@
                     The mailto URI scheme as standardized by <a href="https://tools.ietf.org/html/rfc6068">RFC 6068</a>
                     does not support HTML content. You can try to work around this with one of the following options.
                 </p>
-                <input id="html-variant-body" type="radio" name="html-variant" value="body">
-                <label for="html-variant-body">Use html-body parameter (supported in e.g. Thunderbird)</label>
-                <br/>
                 <input id="html-variant-copy" type="radio" name="html-variant" value="copy">
                 <label for="html-variant-copy">Copy HTML to clipboard</label>
+                <br/>
+                <input id="html-variant-body" type="radio" name="html-variant" value="body">
+                <label for="html-variant-body">Use html-body parameter (supported in e.g. Thunderbird, doesn't work in Chrome)</label>
             </div>
             <h3>Mail Content</h3>
             <input id="include-link" type="checkbox" name="include-link">
@@ -44,6 +44,7 @@
             licensed under <a href="https://creativecommons.org/licenses/by/3.0/legalcode">CC BY 3.0</a>. Changes made to the original
             include addition of background color and text.
         </p>
+        <script src="browser-polyfill.js"></script>
         <script src="options.js"></script>
     </body>
 </html>

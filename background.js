@@ -1,10 +1,11 @@
 (() => {
-    browser.pageAction.onClicked.addListener(handlePageAction)
+    browser.browserAction.onClicked.addListener(handleBrowserAction)
 
-    async function handlePageAction() {
+    async function handleBrowserAction() {
         let settings = await loadSettings()
-        console.log(settings)
     
+        await loadDependencyIfNeeded("browser-polyfill.js", "browser")
+
         if (settings.includeArticle) {
             await loadDependencyIfNeeded("Readability.js", "Readability")
         }
@@ -22,7 +23,7 @@
         return {
             recipient: result.hasOwnProperty("recipient") ? result.recipient : "",
             format: result.hasOwnProperty("format") ? result.format : "plain-text",
-            htmlVariant: result.hasOwnProperty("htmlVariant") ? result.htmlVariant : "body",
+            htmlVariant: result.hasOwnProperty("htmlVariant") ? result.htmlVariant : "copy",
             includeLink: result.hasOwnProperty("includeLink") ? result.includeLink : true,
             includeArticle: result.hasOwnProperty("includeArticle") ? result.includeArticle : true
         }

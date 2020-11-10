@@ -18,7 +18,7 @@
                 resolve(message)
                 port.disconnect()
             })
-            port.postMessage()
+            port.postMessage({})
         })
     }
 

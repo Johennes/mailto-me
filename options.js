@@ -69,7 +69,7 @@
 
     function restoreHtmlVariantOption() {
         browser.storage.sync.get("htmlVariant").then((result) => {
-            let htmlVariant = result.hasOwnProperty("htmlVariant") ? result.htmlVariant : "body"
+            let htmlVariant = result.hasOwnProperty("htmlVariant") ? result.htmlVariant : "copy"
             document.querySelector(`input[name=html-variant][value=${htmlVariant}]`).checked = true
         })
     }
