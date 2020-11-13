@@ -37,7 +37,13 @@ To package the extension:
 ./web-ext build
 ```
 
-## Credits
+## License
+
+mailto:me is licensed under the GNU General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+## Attributions
 
 Article extraction and formatting is powered by [Readability] and [Turndown].
 
