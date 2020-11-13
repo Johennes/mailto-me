@@ -4,7 +4,7 @@ mailto:me is a browser extension for [Firefox] and [Chrome] to email websites to
 yourself. If you want, it's a poor man's read-later system that relies on nothing
 more than your email inbox.
 
-![mailto:me logo](/icons/icon-128.png "mailto:me")
+![mailto:me logo](icons/icon-128.png "mailto:me")
 
 mailto:me generates `mailto://` hyperlinks and lets the browser open them in your
 email client of choice. Note that in order for the extension to work correctly it
