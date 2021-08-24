@@ -24,6 +24,6 @@ Initial release
 
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [Semantic Versioning]: https://semver.org/spec/v2.0.0.html
-[Unreleased]: https://nosuchdomain.mooo.com/git/doc/mailto-me/compare/0.2.0...master
-[0.2.0]: https://nosuchdomain.mooo.com/git/doc/mailto-me/compare/0.1.0...0.2.0
-[0.1.0]: https://nosuchdomain.mooo.com/git/doc/mailto-me/src/tag/0.1.0
+[Unreleased]: https://github.com/Johennes/mailto-me/compare/0.2.0...master
+[0.2.0]: https://github.com/Johennes/mailto-me/compare/0.1.0...0.2.0
+[0.1.0]: https://github.com/Johennes/mailto-me/releases/tag/0.1.0
