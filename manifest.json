@@ -23,7 +23,8 @@
   "permissions": [
     "activeTab",
     "clipboardWrite",
-    "storage"
+    "storage",
+    "contextMenus"
   ],
   "options_ui": {
     "page": "options.html",

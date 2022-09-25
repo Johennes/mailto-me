@@ -1,6 +1,11 @@
 (() => {
     browser.browserAction.onClicked.addListener(handleBrowserAction)
-
+    
+    browser.contextMenus.create({
+        command: "_execute_browser_action",
+        title: "mailto:me"
+    })
+    
     async function handleBrowserAction() {
         let settings = await loadSettings()
     
