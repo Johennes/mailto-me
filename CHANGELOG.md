@@ -10,6 +10,11 @@ The format is based on [Keep a Changelog] and this project adheres to [Semantic 
 
 - Context menu item (#1, thanks @smmr0)
 
+### Changed
+
+- Update Readability to 0.4.1
+- Update Turndown to 7.1.1
+
 ## [0.2.0] - 2020-11-10
 
 ### Added

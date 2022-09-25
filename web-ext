@@ -14,7 +14,7 @@ elif [[ $command = build ]]; then
     flags=--overwrite-dest
 fi
 
-node_modules/web-ext/bin/web-ext $command $flags \
+node_modules/web-ext/bin/web-ext.js $command $flags \
     --ignore-files "**/*.xcf" \
     --ignore-files "*LICENSE*" \
     --ignore-files "README.md" \
