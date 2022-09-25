@@ -6,7 +6,9 @@ The format is based on [Keep a Changelog] and this project adheres to [Semantic 
 
 ## [Unreleased]
 
-- Nothing at the moment
+### Added
+
+- Context menu item (#1, thanks @smmr0)
 
 ## [0.2.0] - 2020-11-10
 
