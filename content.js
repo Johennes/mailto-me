@@ -26,13 +26,7 @@
         if (!settings.includeLink) {
             return null
         }
-        if (settings.format === "plain-text") {
-            return window.location.href
-        } else if (settings.format === "html") {
-            return `<a href="${window.location.href}">${window.location.href}</a>`
-        } else {
-            return null
-        }
+        return { text: window.location.href, html: `<a href="${window.location.href}">${window.location.href}</a>` }
     }
 
     function getArticle(settings) {
@@ -41,26 +35,22 @@
         }
         let article = new Readability(document.cloneNode(true)).parse()
         let content = `<h1>${article.title}</h1>${article.content}`
-        if (settings.format === "plain-text") {
-            let turndownService = new TurndownService()
-            return turndownService.turndown(content)
-        } else if (settings.format === "html") {
-            return content
-        } else {
-            return null
-        }
+        let turndownService = new TurndownService()
+        return { text: turndownService.turndown(content), html: content }
     }
 
     function getBody(settings, link, article) {
-        let body = ""
+        let body = { text: "", html: "" }
         if (link !== null) {
-            body += link
+            body.text += link.text
+            body.html += link.html
         }
         if (article !== null) {
-            if (body.length > 0 && settings.format === "plain-text") {
-                body += "\n\n"
+            if (body.text.length > 0 && settings.format === "plain-text") {
+                body.text += "\n\n"
             }
-            body += article
+            body.text += article.text
+            body.html += article.html
         }
         return body
     }
@@ -68,23 +58,21 @@
     function getMailtoHref(settings, body) {
         let href = `mailto:${encodeURIComponent(settings.recipient)}?subject=${encodeURIComponent(document.title)}`
         if (settings.format === "plain-text") {
-            href += `&body=${encodeURIComponent(body)}`
+            href += `&body=${encodeURIComponent(body.text)}`
         } else if (settings.format === "html" && settings.htmlVariant === "body") {
-            href += `&html-body=${encodeURIComponent(body)}`
+            href += `&html-body=${encodeURIComponent(body.html)}`
         }
         return href
     }
 
-    function copyHtmlToClipboardIfNeeded(settings, html) {
+    function copyHtmlToClipboardIfNeeded(settings, body) {
         if (settings.format !== "html" || settings.htmlVariant !== "copy") {
             return
         }
-        function onCopy(event) {
-            event.preventDefault()
-            event.clipboardData.setData("text/html", html)
-            document.removeEventListener("copy", onCopy)
-        };
-        document.addEventListener("copy", onCopy)
-        document.execCommand("copy")
+        const data = [new ClipboardItem({
+            "text/html": new Blob([body.html], { type: "text/html" }),
+            "text/plain": new Blob([body.text], { type: "text/plain" }),
+        })]
+        navigator.clipboard.write(data)
     }
 })()

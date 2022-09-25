@@ -13,9 +13,6 @@
 
         if (settings.includeArticle) {
             await loadDependencyIfNeeded("Readability.js", "Readability")
-        }
-    
-        if (settings.format == "plain-text") {
             await loadDependencyIfNeeded("turndown.js", "TurndownService")
         }
     

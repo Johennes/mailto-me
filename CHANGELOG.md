@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog] and this project adheres to [Semantic 
 
 - Update Readability to 0.4.1
 - Update Turndown to 7.1.1
+- Switch to Clipboard API as document.execCommand is deprecated
 
 ## [0.2.0] - 2020-11-10
 
