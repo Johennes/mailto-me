@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog] and this project adheres to [Semantic 
 
 ## [Unreleased]
 
+Nothing at the moment
+
+## [1.0.0] - 2022-09-25
+
 ### Added
 
 - Context menu item (#1, thanks @smmr0)
@@ -15,6 +19,7 @@ The format is based on [Keep a Changelog] and this project adheres to [Semantic 
 - Update Readability to 0.4.1
 - Update Turndown to 7.1.1
 - Switch to Clipboard API as document.execCommand is deprecated
+- Temporarily dropped support for Chrome since it requires Manifest version 3
 
 ## [0.2.0] - 2020-11-10
 
@@ -32,6 +37,7 @@ Initial release
 
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [Semantic Versioning]: https://semver.org/spec/v2.0.0.html
-[Unreleased]: https://github.com/Johennes/mailto-me/compare/0.2.0...master
+[Unreleased]: https://github.com/Johennes/mailto-me/compare/1.0.0...master
+[1.0.0]: https://github.com/Johennes/mailto-me/compare/0.2.0...1.0.0
 [0.2.0]: https://github.com/Johennes/mailto-me/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/Johennes/mailto-me/releases/tag/0.1.0

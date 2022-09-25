@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "mailto:me",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Mail websites to yourself for archiving or reading them later",
   "icons": {
     "48": "icons/icon-48.png",
