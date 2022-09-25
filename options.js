@@ -1,6 +1,7 @@
 (() => {
     document.addEventListener("DOMContentLoaded", () => {
         restoreRecipientOption()
+        restoreContextMenuOption()
         restoreFormatOption()
         restoreHtmlVariantOption()
         restoreIncludeLinkOption()
@@ -8,6 +9,8 @@
     })
 
     document.querySelector("input[name=recipient]").addEventListener("change", storeRecipientOption)
+
+    document.querySelector("input[name=context-menu]").addEventListener("change", storeContextMenuOption)
 
     document.querySelectorAll("input[name=format]").forEach((radiobutton) => {
         radiobutton.addEventListener("change", storeFormatOption)
@@ -30,6 +33,19 @@
         browser.storage.sync.get("recipient").then((result) => {
             let recipient = result.hasOwnProperty("recipient") ? result.recipient : ""
             document.querySelector(`input[name=recipient]`).value = recipient
+        })
+    }
+
+    function storeContextMenuOption() {
+        browser.storage.sync.set({
+            contextMenu: document.querySelector(`input[name=context-menu]`).checked
+        })
+    }
+
+    function restoreContextMenuOption() {
+        browser.storage.sync.get("contextMenu").then((result) => {
+            let contextMenu = result.hasOwnProperty("contextMenu") ? result.contextMenu : true
+            document.querySelector(`input[name=context-menu]`).checked = contextMenu
         })
     }
 
