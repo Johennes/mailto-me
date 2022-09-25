@@ -1,6 +1,11 @@
 (() => {
     browser.browserAction.onClicked.addListener(handleBrowserAction)
-
+    
+    toggleContextMenu()
+    browser.storage.sync.onChanged.addListener(async () => {
+        await toggleContextMenu()
+    })
+    
     async function handleBrowserAction() {
         let settings = await loadSettings()
     
@@ -18,10 +23,25 @@
         browser.tabs.executeScript({file: "content.js"});
     }
     
+    async function toggleContextMenu() {
+        let settings = await loadSettings()
+    
+        if (settings.contextMenu) {
+            browser.contextMenus.create({
+                id: "main",
+                command: "_execute_browser_action",
+                title: "mailto:me"
+            })
+        } else {
+            await browser.contextMenus.removeAll()
+        }
+    }
+    
     async function loadSettings() {
-        let result = await browser.storage.sync.get(["recipient", "format", "htmlVariant", "includeLink", "includeArticle"])
+        let result = await browser.storage.sync.get(["recipient", "contextMenu", "format", "htmlVariant", "includeLink", "includeArticle"])
         return {
             recipient: result.hasOwnProperty("recipient") ? result.recipient : "",
+            contextMenu: result.hasOwnProperty("contextMenu") ? result.contextMenu : true,
             format: result.hasOwnProperty("format") ? result.format : "plain-text",
             htmlVariant: result.hasOwnProperty("htmlVariant") ? result.htmlVariant : "copy",
             includeLink: result.hasOwnProperty("includeLink") ? result.includeLink : true,
