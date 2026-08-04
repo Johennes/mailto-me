@@ -35,10 +35,11 @@
     }
     
     async function loadSettings() {
-        let result = await browser.storage.sync.get(["recipient", "contextMenu", "format", "htmlVariant", "includeLink", "includeArticle"])
+        let result = await browser.storage.sync.get(["recipient", "contextMenu", "subjectPrefix", "format", "htmlVariant", "includeLink", "includeArticle"])
         return {
             recipient: result.hasOwnProperty("recipient") ? result.recipient : "",
             contextMenu: result.hasOwnProperty("contextMenu") ? result.contextMenu : true,
+            subjectPrefix: result.hasOwnProperty("subjectPrefix") ? result.subjectPrefix : "",
             format: result.hasOwnProperty("format") ? result.format : "plain-text",
             htmlVariant: result.hasOwnProperty("htmlVariant") ? result.htmlVariant : "copy",
             includeLink: result.hasOwnProperty("includeLink") ? result.includeLink : true,
