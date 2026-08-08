@@ -56,7 +56,8 @@
     }
 
     function getMailtoHref(settings, body) {
-        let href = `mailto:${encodeURIComponent(settings.recipient)}?subject=${encodeURIComponent(document.title)}`
+        let subject = settings.subjectPrefix + document.title
+        let href = `mailto:${encodeURIComponent(settings.recipient)}?subject=${encodeURIComponent(subject)}`
         if (settings.format === "plain-text") {
             href += `&body=${encodeURIComponent(body.text)}`
         } else if (settings.format === "html" && settings.htmlVariant === "body") {

@@ -6,7 +6,9 @@ The format is based on [Keep a Changelog] and this project adheres to [Semantic 
 
 ## [Unreleased]
 
-Nothing at the moment
+### Added
+
+- Option to prepend a custom prefix to the generated subject
 
 ## [1.0.0] - 2022-09-25
 

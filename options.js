@@ -1,6 +1,7 @@
 (() => {
     document.addEventListener("DOMContentLoaded", () => {
         restoreRecipientOption()
+        restoreSubjectPrefixOption()
         restoreContextMenuOption()
         restoreFormatOption()
         restoreHtmlVariantOption()
@@ -9,6 +10,8 @@
     })
 
     document.querySelector("input[name=recipient]").addEventListener("change", storeRecipientOption)
+
+    document.querySelector("input[name=subject-prefix]").addEventListener("change", storeSubjectPrefixOption)
 
     document.querySelector("input[name=context-menu]").addEventListener("change", storeContextMenuOption)
 
@@ -33,6 +36,19 @@
         browser.storage.sync.get("recipient").then((result) => {
             let recipient = result.hasOwnProperty("recipient") ? result.recipient : ""
             document.querySelector(`input[name=recipient]`).value = recipient
+        })
+    }
+
+    function storeSubjectPrefixOption() {
+        browser.storage.sync.set({
+            subjectPrefix: document.querySelector(`input[name=subject-prefix]`).value
+        })
+    }
+
+    function restoreSubjectPrefixOption() {
+        browser.storage.sync.get("subjectPrefix").then((result) => {
+            let subjectPrefix = result.hasOwnProperty("subjectPrefix") ? result.subjectPrefix : ""
+            document.querySelector(`input[name=subject-prefix]`).value = subjectPrefix
         })
     }
 
